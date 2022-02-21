@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+  <script src="../static/js/script2.js"></script>
+  <link rel="stylesheet" href="../static/css/normalize.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+  <main class="main">
+
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <div class="container-search">
+          <h2 class="contacts-title section-title"></h2>
+          <div class="contacts-search flex">
+            <div class="contacts-left flex">
+              <!-- <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form"> -->
+              <form method="GET" name="filter" action="http://localhost:8099/dadata" target="area"
+                class="form">
+                <!-- ****************************************************************************** -->
+                <div class="contacts-item flex">
+                  <div class="contacts-item-title" id="div_fio">
+                    <label for="in-fio">Поиск по ФИО</label>
+                    <input class="form-input" type="text" name="adress" id="in_fio" autofocus pattern="^[А-Яа-яЁё\s]+$"
+                      title="Имя содержит только русские буквы" placeholder="Введите имя" onfocus="changeFIO()"
+                      onblur="changeOther()">
+                    <button class="btn-find btn" id="btn_fio" onclick="clearTN()" onmouseover="changeFIO_btn()"
+                      onmouseout="rechangeFIO_btn()"></button>
+                  </div>
+                  <!-- <div class="contacts-item-radio">
+                    <input type="radio" disabled checked name="check" id="r-fio" value="name">
+                  </div> -->
+                </div>
+              </form>
+
+              <form method="GET" name="filter" action="http://srv-masterdata:8080/get-act-employee" target="area"
+                class="form">
+                <div class="contacts-item flex">
+                  <div class="contacts-item-title" id="div_tn">
+                    <label for="in-tn">Поиск по ТН</label>
+                    <input class="form-input" id="in_tn" type="text" name="tabno" pattern="^[-0-9]+$"
+                      title="Табельный номер содержит только цифры" placeholder="Введите табельный номер"
+                      onfocus="changeTN()" onblur="changeOther()">
+                    <button class="btn-find btn" id="btn_tn" onclick="clearFIO()" onmouseover="changeTN_btn()"
+                      onmouseout="rechangeTN_btn()"></button>
+                  </div>
+                  <!-- <div class="contacts-item-radio">
+                    <input type="radio" disabled name="check" id="r-tn" value="tabno">
+                  </div> -->
+                </div>
+              </form>
+              <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form">
+                <div class="contacts-item contacts-item-redact flex">
+
+                  <div class="contacts-item-title">
+                    <label for="in_reduct">Редактировать</label>
+
+                    <div class="item-redact flex">
+                      <div class="item-redact-radio">
+                        <label>E-mail
+                          <input type="radio" name="check" id="r-mail" value="mail">
+                        </label>
+                        <!-- <label for="r-mail">E-mail</label> -->
+                      </div>
+                      <div class="item-redact-radio">
+                        <label>Отдел
+                          <input type="radio" name="check" id="r-otdel" value="tlph">
+                        </label>
+                        <!-- <label for="r-otdel">Тлф</label> -->
+                      </div>
+                    </div>
+                    <input class="form-input" id="in_reduct" type="text" name="reduct">
+                    <button class="btn-send btn" onclick="xFunction()"></button>
+                  </div>
+
+                  <!-- <div class="contacts-item-radio">
+                  <input type="radio" disabled name="check" id="r-tn" value="tabno">
+                  </div> -->
+                </div>
+              </form>
+            </div>
+
+            <div class="contacts-right flex">
+              <!-- <p class="contacts-frame"></p> -->
+              <iframe class="frame" name="area"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Большого путь океана
+    обеспечивает ты на берегу! Подзаголовок, что большой она своих семь грамматики взгляд толку скатился напоивший
+    знаках инициал страну.
+  </main>
+
+</body>
+
+</html>
